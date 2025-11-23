@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Math of Things | slides MOC</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/night.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+  </head>
+
+
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+          <section data-background-image="images/niels-bohr.png" data-background-opacity="0.8">
+        <section data-background-video="images/net_bkg.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h3 class="fragment">"Chi non rimane sconvolto quando si imbatte per la prima volta nella teoria quantistica <br> non può assolutamente averla compresa."</h1>
+<h4 class="fragment">&mdash; Niels Bohr - 1923</h3>
+          <!-- <h2 class="fragment r-fit-text">Una guida gentile</h2> -->
+          <!-- <h2 class="fragment r-fit-text">alla rivoluzione della Fisica</h2> -->
+          <!-- <h5 class="fragment"><em>prof. Diego Fantinelli</em></h5> -->
+        </section>
+        <section data-background-video="images/net_bkg.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">Meccanica Quantistica</h1>
+          <!-- <h1 class="fragment r-fit-text">Quando il mondo smette di essere normale</h1> -->
+          <h2 class="fragment r-fit-text">Una guida gentile</h2>
+          <h2 class="fragment r-fit-text">alla rivoluzione della Fisica</h2>
+          <h5 class="fragment"><em>prof. Diego Fantinelli</em></h5>
+        </section>
+        </section>
+
+        <!-- <section> -->
+        <!-- <section data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+        <!-- <section data-auto-animate data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+  <!-- <h1 class="fragment">il dato</h1> -->
+  <!-- <h1 class="fragment r-fit-text" style="color: #3B82F6;">30%</h1> -->
+  <!-- <h3 class="fragment r-fit-text" style="color: #3B82F6;">del PIL degli USA</h3> -->
+  <!--           </section> -->
+  <!---->
+        <section data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+        <!-- <section data-auto-animate data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+  <h1 class="fragment">il dato</h1>
+  <h1 class="fragment Big"> il 30%</h1>
+  <h2 class="fragment">del PIL degli USA</h2>
+  <h4 class="fragment">dipende dalla tecnologia sviluppata</h4>
+  <h4 class="fragment r-fit-text">dalla meccanica Quantistica</h4>
+<!-- <section data-auto-animate> -->
+<!--   <h1 class="r-fit-text" style="color: #3B82F6;">del PIL degli USA</h1> -->
+<!-- </section> -->
+<!-- <section data-auto-animate data-auto-animate-id="two"> -->
+<!--   <h1>Group B</h1> -->
+<!-- </section> -->
+<!-- <section data-auto-animate data-auto-animate-id="two"> -->
+<!--   <h1 class="r-fit-text" style="color: #10B981;">30%</h1> -->
+<!-- </section> -->
+<!-- <section data-auto-animate data-auto-animate-id="two" data-auto-animate-restart> -->
+<!--   <h1>Group C</h1> -->
+<!-- </section> -->
+<!-- <section data-auto-animate data-auto-animate-id="two"> -->
+<!--   <h1 style="color: #EC4899;">Group C</h1> -->
+<!-- </section> -->
+<!-- <section data-auto-animate> -->
+<!-- <h1 class="r-fit-text" style="color: #3B82F6;">30%</h1> -->
+<!-- <!-- <h1 class="r-fit-text" style="color: #3B82F6;">del PIL degli USA</h1> -->
+<!-- </section> -->
+<!-- <section data-auto-animate> -->
+<!-- <h1 class="r-fit-text" style="color: #3B82F6;">del PIL degli USA</h1> -->
+<!-- </section> -->
+          <!-- <h1 class="fragment">il dato</h1> -->
+          <!-- <h1 class="fragment r-fit-text">30%</h1> -->
+          <!-- <h2 class="fragment r-fit-text">del PIL degli Stati Uniti</h2> -->
+
+          <aside class="notes">
+
+            Oggi parleremo di meccanica quantistica, una delle idee più strane che l’umanità abbia mai concepito.<br>
+            Niente formule, niente tecnicismi inutili: solo una storia affascinante su come la natura, a volte, rompa le regole del buon senso.
+            <br>
+            La meccanica quantistica nasce da una crisi: la fisica classica, a fine Ottocento, era convinta di aver capito tutto.<br>
+            Spoiler: non era vero.
+</section>
+        </section>
+
+<section>
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">intro</h1>
+
+              </section>
+          <section data-background-video="images/pov.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">POV</h1>
+            <h2 class="fragment">di nuovo studente</h2>
+              </section>
+
+          <section data-background-video="images/pov.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h3 class="fragment">di nuovo studente</h3>
+          </section>
+
+          <section data-background-video="images/pov.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <!-- <h1 class="big">metodo</h1> -->
+            <h2 class="fragment">di nuovo studente</h2>
+            <ul>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+            </ul>
+          </section>
+          </section>
+
+        <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <section data-background-image="images/einstein.jpg" data-background-opacity="0.5">
+            <quote cite="Albert Einstein - settembre 1926">
+              <h3 class="big, fragment"><em>"Sono del tutto convinto che Lui non stia affatto giocando a dadi"</em>
+              </h3>
+              <p class="fragment" style="align:left">&mdash; Albert Einstein - settembre 1926</p>
+            </quote>
+          </section>
+
+          <section data-background-image="images/niels-bohr.png" data-background-opacity="0.5">
+            <quote cite="Albert Einstein - settembre 1926">
+              <h3 class="big, fragment"><em>"Sono del tutto convinto che Lui non stia affatto giocando a dadi"</em>
+              </h3>
+              <p class="fragment" style="align:left">&mdash; Niels Bohr - settembre 1926</p>
+            </quote>
+          </section>
+
+        </section>
+        <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h2 class="fragment">Il mondo non è come sembra</h2>
+          <h2 class="fragment">una guida gentile alla meccanica quantistica</h2>
+        </section>
+
+        <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big, fragment">obiettivo</h1>
+          <ul>
+            <li class="fragment">
+              Dimostrare che anche le cose complesse modo semplice e intuitivo.
+            </li>
+            <li class="fragment">
+              Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+            </li>
+          </ul>
+        </section>
+
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+        <h1 class="big">atto secondo</h1>
+
+      </section>
+        <section data-background-image="images/entang.jpg" data-background-opacity="0.5">
+          <h1 class="r-fit-text">Entanglement</h1>
+          <h1 class="r-fit-text">Quantistico</h1>
+          <h2 class="fragment">è un punto di vista</h2>
+        </section>
+        <section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">La rivoluzione</h1>
+            <h2 class="fragment">è un punto di vista</h2>
+          </section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">metodo</h1>
+            <h2 class="fragment">di nuovo studente</h2>
+            <ul>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+        <h1 class="big">atto terzo</h1>
+
+      </section>
+
+        <section data-background-image="images/einstein.jpg" data-background-opacity="0.5">
+
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+          <h1 class="r-fit-text">La crisi della</h1>
+          <h1 class="r-fit-text">Fisica Classica</h1>
+          <h2 class="fragment">è un punto di vista</h2>
+        </section>
+
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+          <h1 class="r-fit-text">Tre fenomeni mettono</h1>
+          <h1 class="r-fit-text">in crisi la fisica dell’epoca.</h1>
+           <h3><ol>
+              <li class="fragment">Radiazione del corpo nero</li>
+              <li class="fragment">Effetto fotoelettrico</li>
+              <li class="fragment">Stabilità dell'atomo</li>
+            </ol></h3>
+        </section>
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+          <h1 class="r-fit-text">Radiazione del corpo nero</h1>
+            <ul>
+          <li class="fragment">La fisica classica prevedeva energia infinita alle alte frequenze, un risultato assurdo noto come catastrofe ultravioletta. Planck risolse il problema introducendo l’idea che l’energia fosse emessa in pacchetti discreti, i quanti, dando origine alla fisica quantistica.</li>
+            </ul>
+        </section>
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+          <h1 class="r-fit-text">Effetto fotoelettrico</h1>
+            <ul>
+          <li class="fragment">La luce può espellere elettroni da un metallo, ma solo se possiede una frequenza minima. Aumentare l’intensità non basta: serve luce più energetica. Einstein spiegò il fenomeno introducendo i fotoni, quanti di luce.</li>
+            </ul>
+        </section>
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+          <h1 class="r-fit-text">Stabilità dell'atomo</h1>
+            <ul>
+          <li class="fragment">Secondo la fisica classica l’elettrone, orbitando attorno al nucleo, dovrebbe perdere energia e precipitare, cosa che non accade. La teoria quantistica introduce livelli energetici discreti che mantengono stabile l’atomo.</li>
+            </ul>
+        </section>
+        </section>
+        <section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">La rivoluzione</h1>
+            <h2 class="fragment">è un punto di vista</h2>
+          </section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">metodo</h1>
+            <h2 class="fragment">di nuovo studente</h2>
+            <ul>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background-video="images/wave2.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">Decoerenza <br>Quantistica</h1>
+          <h3>Da un accordo pulito a uno decoerente</h3>
+
+          <audio controls>
+            <source src="images/aud_01.wav" type="audio/wav">
+          </audio>
+        </section>
+
+
+<section>
+  <h2>Decoerenza quantistica</h2>
+  <button onclick="document.getElementById('audio1').play()">
+    Riproduci effetto
+  </button>
+
+  <audio id="audio1">
+            <source src="images/aud_01.wav" type="audio/wav">
+  </audio>
+</section>
+
+        <section data-background-image="images/einstein.jpg" data-background-opacity="0.3">
+          <section data-background-video="images/neon.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">titolo</h1>
+            <div style="
+              display: flex;
+              gap: 3rem;
+              align-items: flex-start;
+              justify-content: left;
+              ">
+
+              <!-- COLONNA SINISTRA -->
+              <div class="fragment" style="flex: 1;">
+                <h2>Colonna 1</h2>
+                <ul>
+                  <li>Punto 1</li>
+                  <li>Punto 2</li>
+                  <li>Punto 3</li>
+                </ul>
+              </div>
+
+              <!-- COLONNA DESTRA -->
+              <div class="fragment" style="flex: 1;">
+                <h2>Colonna 2</h2>
+                <p>
+                  Qui la colonna destra, con contenuti diversi.<br>
+                  Ideale per confronti, immagini, grafici, ecc.
+                </p>
+                <!-- <img src="images/placeholder.jpg" style="width: 80%; border-radius: 8px;"> -->
+              </div>
+
+            </div>
+          </section>
+
+        </section>
+
+        <section data-background-image="images/math.gif" data-background-opacity="0.6">
+          <h1 class="big">domande?</h1>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">preludio</h1>
+        </section>
+        <section>  <!-- solo contenitore verticale -->
+
+          <!-- SLIDE 1 -->
+          <section data-background-video="images/map.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.4">
+            <h1 class="r-fit-text">Quanti sono i</h1>
+            <h1 class="big">QUANTI?</h1>
+          </section>
+
+          <!-- SLIDE 2 -->
+          <section
+            data-background-video="images/map.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+            <h2>Perché la MQ è “strana”?</h2>
+            <p>Una breve storia del perché la fisica classica non bastava più...</p>
+          </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">atto terzo</h1>
+        </section>
+          <!-- SLIDE 3 -->
+          <section
+            data-background-video="images/map.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+            <h2>Crisi della fisica classica</h2>
+            <ul>
+              <li>Corpo nero</li>
+              <li>Effetto fotoelettrico</li>
+              <li>Spettri atomici</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">atto terzo</h1>
+        </section>
+
+        <section data-background-video="images/net_bkg.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h2>Obiettivi del progetto</h2>
+          <ul>
+            <li>Applicare la matematica a contesti reali</li>
+            <li>Stimolare il pensiero critico e creativo</li>
+            <li>Collaborare e comunicare in modo efficace</li>
+            <li>Utilizzare strumenti digitali e coding</li>
+          </ul>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">atto quarto</h1>
+
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">atto finale</h1>
+        </section>
+<section>
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">outro</h1>
+
+        </section>
+        <section data-background-video="images/wave.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">La crisi della fisica classica</h1>
+        </section>
+
+        <section data-background-video="images/wave.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">La crisi della fisica classica</h1>
+        </section>
+        </section>
+        <!-- Domande finali o brainstorming -->
+        <section data-background-image="images/math.gif" data-background-opacity="0.6">
+          <h1 class="big">domande?</h1>
+        </section>
+</div>
+</section>
+
+    </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      transition: 'convex',
+      autoPlayMedia: true,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+    </script>
+  </body>
+</html>
