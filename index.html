@@ -785,11 +785,10 @@
   </aside>
 
 </section>
-
-
 </section>
 
 
+<<<<<<< HEAD
 
 
 
@@ -803,6 +802,18 @@
 <!--             <source src="images/aud_01.wav" type="audio/wav"> -->
 <!--   </audio> -->
 <!-- </section> -->
+=======
+<section>
+  <h2>Decoerenza quantistica</h2>
+  <button onclick="document.getElementById('audio1').play()">
+    Riproduci effetto
+  </button>
+
+  <audio id="audio1">
+            <source src="images/aud_01.wav" type="audio/wav">
+  </audio>
+</section>
+>>>>>>> a17acaf6 (hinton nobel section)
 
         <section data-background-image="images/einstein.jpg" data-background-opacity="0.3">
           <section data-background-video="images/neon.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
@@ -925,9 +936,127 @@
         <section data-background-image="images/math.gif" data-background-opacity="0.6">
           <h1 class="big">domande?</h1>
         </section>
+
+        <section data-background-image="images/hinton7.jpg" data-background-opacity="0.8">
+<section data-background-video="images/net_bkg.mp4"
+         data-background-video-loop
+         data-background-video-muted
+         data-background-opacity="0.3">
+          <h2 class="r-fit-text">Geoffrey Hinton - Nobel per la Fisica 2024</h2>
+          <h6>- The Godfather of AI -</h6>
+
+          <!-- Finestra con testo che scorre -->
+          <div class="credits fragment">
+            <div class="credits__inner">
+              <h4>
+                Discorso alla cerimonia di premiazione del Premio Nobel per la Fisica 2024, professor Geoffrey Hinton.
+              </h4>
+<br>
+              <p>
+                Quest’anno i Comitati Nobel per la Fisica e per la Chimica hanno
+                riconosciuto i progressi straordinari compiuti in una nuova forma
+                di intelligenza artificiale che utilizza reti neurali artificiali
+                per imparare a risolvere problemi computazionali complessi.
+              </p>
+
+              <p>
+                Questa nuova forma di intelligenza artificiale eccelle nel modellare
+                l’intuizione umana più che il ragionamento umano e ci permetterà di
+                creare assistenti altamente intelligenti e competenti, in grado di
+                aumentare la produttività in quasi tutti i settori.
+                Se i benefici di questa maggiore produttività potranno essere
+                condivisi equamente, si tratterà di un enorme progresso per tutta
+                l’umanità.
+              </p>
+
+              <p>
+                Purtroppo, il rapido sviluppo dell’intelligenza artificiale comporta
+                anche molti rischi a breve termine. Ha già contribuito alla creazione
+                di camere dell’eco divisive, offrendo alle persone contenuti che
+                alimentano indignazione e polarizzazione.
+                È già utilizzata da governi autoritari per la sorveglianza di massa
+                e da criminali informatici per attacchi di phishing.
+              </p>
+
+              <p>
+                In un futuro prossimo, l’intelligenza artificiale potrebbe essere
+                impiegata per creare nuovi virus devastanti e armi letali
+                spaventose, capaci di decidere autonomamente chi uccidere o mutilare.
+                Tutti questi rischi a breve termine richiedono un’attenzione urgente
+                e decisa da parte dei governi e delle organizzazioni internazionali.
+              </p>
+
+              <p>
+                Esiste inoltre una minaccia esistenziale di più lungo periodo,
+                che emergerà quando creeremo entità digitali più intelligenti di noi.
+                Non sappiamo se saremo in grado di mantenerne il controllo, ma oggi
+                abbiamo prove che, se verranno sviluppate da aziende guidate da
+                profitti a breve termine, la nostra sicurezza non sarà la priorità.
+              </p>
+
+              <p>
+                Abbiamo urgente bisogno di ricerca su come impedire che queste nuove
+                entità sviluppino il desiderio di prendere il controllo.
+                Non si tratta più di fantascienza.
+                <br>
+              <p class="firma">&mdash; Geoffrey Hinton</p>
+            </div>
+          </div>
+
+          <p style="font-size:0.55em; opacity:.7; margin-top:0.8em;">
+            fonte YouTube: <a href="https://www.youtube.com/watch?v=-f5WQAk3dYo" target="_blank">Banquet speech — Geoffrey Hinton (estratto)</a>
+          </p>
+        </section>
+
+<style>
+  .credits{
+    height: 420px;              /* altezza “finestra” */
+    overflow: hidden;           /* nasconde ciò che esce */
+    padding: 16px 20px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 6px;
+    background: rgba(0,0,0,.25);
+  }
+
+  .credits__inner{
+    font-size: 0.86em;
+    line-height: 1.5;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 0.01em;
+    white-space: normal;
+    max-width: 70ch;
+  will-change: transform;
+  margin: 0 auto;
+
+    /* durata: aumenta se vuoi più lento */
+    animation: creditsScroll 80s linear infinite;
+  }
+
+  .credits__inner p{
+    hyphens: auto;
+    margin: 0 0 1.2em 0;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+.credits__inner p.firma{
+  text-align:right;
+  margin-top: 2em;
+  font-style: italic;
+}
+
+@keyframes creditsScroll{
+  0%   { transform: translateY(25%); }
+  100% { transform: translateY(-100%); }
+}
+
+  /* opzionale: pausa quando ci passi sopra col mouse */
+  .credits:hover .credits__inner{
+    animation-play-state: paused;
+  }
+</style>
 </div>
 </section>
-
+</section>
     </div>
     </div>
 
