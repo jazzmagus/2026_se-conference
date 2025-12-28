@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Math of Things | slides MOC</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/night.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+  </head>
+
+
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section data-background-image="images/niels-bohr.png" data-background-opacity="0.8">
+          <section data-background-video="images/net_bkg.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h3 class="fragment">
+              "Chi non rimane sconvolto quando si imbatte per la prima volta nella teoria quantistica <br>
+              non può assolutamente averla compresa."
+            </h3>
+            <p class="fragment" style="text-align:right;">&mdash; Niels Bohr - 1923</p>
+          </section>
+
+          <section data-background-video="images/net_bkg.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">Meccanica Quantistica</h1>
+            <h2 class="fragment r-fit-text">Una guida gentile</h2>
+            <h2 class="fragment r-fit-text">alla rivoluzione della Fisica</h2>
+            <h5 class="fragment"><em>prof. Diego Fantinelli</em></h5>
+          </section>
+        </section>
+
+        <!-- <section> -->
+        <!-- <section data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+        <!-- <section data-auto-animate data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+        <!-- <h1 class="fragment">il dato</h1> -->
+        <!-- <h1 class="fragment r-fit-text" style="color: #3B82F6;">30%</h1> -->
+        <!-- <h3 class="fragment r-fit-text" style="color: #3B82F6;">del PIL degli USA</h3> -->
+        <!--           </section> -->
+        <!---->
+        <section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <!-- <section data-auto-animate data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+            <h1 class="r-fit-text fragment">Perché parlare di</h1>
+            <!-- <h1 class="fragment Big">parlare di</h1> -->
+            <!-- <h2 class="fragment">del PIL degli USA</h2> -->
+            <!-- <h4 class="fragment">dipende dalla tecnologia sviluppata</h4> -->
+            <h4 class="fragment r-fit-text">Meccanica Quantistica?!?</h4>
+            <img class="fragment" src="images/dude.png" style="width: 80%; opacity:0.6">
+
+            <aside class="notes">
+
+              Oggi parleremo di meccanica quantistica, una delle idee più strane che l’umanità abbia mai concepito.<br>
+              Niente formule, niente tecnicismi inutili: solo una storia affascinante su come la natura, a volte, rompa le regole del buon senso.
+              <br>
+              La meccanica quantistica nasce da una crisi: la fisica classica, a fine Ottocento, era convinta di aver capito tutto.<br>
+              Spoiler: non era vero.
+              </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="fragment r-fit-text">Premio Nobel per la Fisica 2024</h1>
+            <h2 class="fragment Big">L'effetto tunnel quantistico</h2>
+            <h3 class="fragment r-fit-text">quando le particelle attraversano “l’impossibile”</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Introduco l’idea che il Nobel 2026 è dedicato (ipoteticamente) all’effetto tunnel quantistico.</li>
+                <li>Sottolineo che è un fenomeno che sfida il buon senso classico: “una particella attraversa una barriera che non dovrebbe superare”.</li>
+                <li>Ricordo al pubblico che questo effetto è al cuore di molte tecnologie moderne, non solo una curiosità teorica.</li>
+                <li>Posso collegarmi alla slide precedente sul ruolo economico della MQ (PIL, tecnologie, ecc.).</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Che cos'è l'effetto tunnel?</h2>
+            <h3 class="fragment r-fit-text">Una particella “passa” attraverso una barriera di potenziale</h3>
+            <h4 class="fragment">anche se non ha energia sufficiente in senso classico</h4>
+            <h4 class="fragment">probabilità, non certezze</h4>
+
+            <aside class="notes">
+              <ul>
+                <li>Richiamo l’immagine classica: una pallina che non ha abbastanza energia non supera la collina.</li>
+                <li>Nel mondo quantistico, invece, esiste una certa probabilità che la particella “si trovi” dall’altra parte.</li>
+                <li>Non è che “sfonda” la barriera: è la nostra descrizione classica che non funziona più.</li>
+                <li>Sottolineo la parola chiave: probabilità. La MQ parla in termini probabilistici, non deterministici.</li>
+              </ul>
+            </aside>
+          </section>
+
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Perché (meriterebbe) un Nobel?</h2>
+            <h3 class="fragment Big">Dai transistor alle stelle</h3>
+            <h4 class="fragment r-fit-text">diodi tunnel, memoria flash, microscopia a effetto tunnel</h4>
+            <h4 class="fragment r-fit-text">fusione nel Sole e nelle stelle</h4>
+
+            <aside class="notes">
+              <ul>
+                <li>Spiego che l’effetto tunnel non è solo teoria: entra nei dispositivi elettronici (diodi tunnel, effetti di leakage nei transistor, memorie flash).</li>
+                <li>Cito la microscopia a effetto tunnel (STM) che permette di “vedere” gli atomi sulle superfici.</li>
+                <li>Collego alle stelle: senza effetto tunnel, le reazioni di fusione nel Sole sarebbero estremamente improbabili.</li>
+                <li>Chiudo dicendo che un Nobel su questo tema collegherebbe in modo spettacolare il mondo dell’ultra-piccolo con il cosmo.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">I tre scienziati del Nobel 2026</h2>
+
+            <div class="fragment" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+              <!-- Scienziato 1 -->
+              <div style="text-align: center;">
+                <img src="images/nobel1.png" style="width: 60%; border-radius: 5%;">
+                <h4>John Clarke</h4>
+              </div>
+
+              <!-- Scienziato 2 -->
+              <div style="text-align: center;">
+                <img src="images/nobel2.png" style="width: 60%; border-radius: 5%;">
+                <h4>Michel H. Devoret</h4>
+              </div>
+
+              <!-- Scienziato 3 -->
+              <div style="text-align: center;">
+                <img src="images/nobel3.png" style="width: 60%; border-radius: 5%;">
+                <h4>John M. Martinis</h4>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <ul>
+                <li>Presento brevemente i tre vincitori del premio Nobel 2026.</li>
+                <li>Per ciascuno: ruolo specifico nella scoperta o nello sviluppo teorico dell’effetto tunnel.</li>
+                <li>Metto in evidenza come spesso il Nobel premi collaborazioni di lungo periodo, non singoli colpi di genio isolati.</li>
+                <li>Invito il pubblico a notare la dimensione internazionale della ricerca: laboratori, istituti, collaborazioni globali.</li>
+              </ul>
+            </aside>
+          </section>
+
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <!-- <section data-auto-animate data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+            <h1 class="fragment">il dato</h1>
+            <h1 class="fragment Big"> il 30%</h1>
+            <h2 class="fragment">del PIL degli USA</h2>
+            <h4 class="fragment">dipende dalla tecnologia sviluppata</h4>
+            <h4 class="fragment r-fit-text">dalla meccanica Quantistica</h4>
+
+            <aside class="notes">
+
+              Oggi parleremo di meccanica quantistica, una delle idee più strane che l’umanità abbia mai concepito.<br>
+              Niente formule, niente tecnicismi inutili: solo una storia affascinante su come la natura, a volte, rompa le regole del buon senso.
+              <br>
+              La meccanica quantistica nasce da una crisi: la fisica classica, a fine Ottocento, era convinta di aver capito tutto.<br>
+              Spoiler: non era vero.
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <!-- <section data-auto-animate data-background-video="images/back1.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+            <h1 class="fragment">il dato</h1>
+            <h1 class="fragment Big"> il 30%</h1>
+            <h2 class="fragment">del PIL degli USA</h2>
+            <h4 class="fragment">dipende dalla tecnologia sviluppata</h4>
+            <h4 class="fragment r-fit-text">dalla meccanica Quantistica</h4>
+
+            <aside class="notes">
+
+              Oggi parleremo di meccanica quantistica, una delle idee più strane che l’umanità abbia mai concepito.<br>
+              Niente formule, niente tecnicismi inutili: solo una storia affascinante su come la natura, a volte, rompa le regole del buon senso.
+              <br>
+              La meccanica quantistica nasce da una crisi: la fisica classica, a fine Ottocento, era convinta di aver capito tutto.<br>
+              Spoiler: non era vero.
+          </section>
+
+        </section>
+        <section>
+          <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">intro</h1>
+
+          </section>
+          <section data-background-video="images/pov.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">Il mio POV</h1>
+            <h2 class="fragment">Rimettersi nei panni dello studente</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>Introduco il mio approccio personale: pur insegnando da anni, ci sono argomenti che conosciamo “di nome”, ma non davvero in profondità.</li>
+                <li>Per parlare dell’effetto tunnel con competenza divulgativa ho dovuto “disimparare” e “reimparare”.</li>
+                <li>Questo è un invito implicito al pubblico: *ogni tanto è utile tornare studenti, anche quando si è insegnanti*.</li>
+                <li>È il punto di partenza di tutta la mia preparazione.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/pov.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Di nuovo studente</h2>
+            <h3 class="fragment r-fit-text">mettersi in ascolto, fare domande, accettare la complessità</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Descrivo la sensazione di confrontarmi con materiali avanzati (articoli, paper, derivazioni matematiche).</li>
+                <li>Parlo del “disagio produttivo”: quando senti che non capisci tutto, ma proprio per questo inizi a capire davvero.</li>
+                <li>Racconto il valore del fermarsi, prendere appunti, riformulare.</li>
+                <li>Ogni insegnante dovrebbe sperimentare periodicamente questa prospettiva.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/pov.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Di nuovo insegnante</h2>
+            <h3 class="fragment r-fit-text">trasformare idee difficili in concetti accessibili</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Racconto come, dopo aver capito i concetti “da studente”, ho dovuto trasformarli.</li>
+                <li>Il mio obiettivo: ridurre la complessità senza tradire la verità scientifica.</li>
+                <li>Per spiegare il tunneling ho sintetizzato, visualizzato, creato metafore fisiche.</li>
+                <li>Qui nasce il mio metodo di lavoro per la conferenza.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/pov.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Il mio metodo</h2>
+            <ul>
+              <li class="fragment">
+                Scomporre la complessità: studiare i dettagli tecnici, capire le idee chiave.
+              </li>
+              <li class="fragment">
+                Riformulare: trasformare concetti avanzati in immagini, metafore, analogie.
+              </li>
+              <li class="fragment">
+                Trasmettere: costruire una narrazione che renda il tema accessibile senza banalizzarlo.
+              </li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Descrivo la mia strategia in tre fasi: analisi → digestione → narrazione.</li>
+                <li>Il mio POV è quello di qualcuno che deve “fare ponte” tra fisica avanzata e platea generalista.</li>
+                <li>Spiego che questo approccio è ciò che ha guidato tutta la presentazione.</li>
+                <li>Concludo con l’idea che *comprendere davvero significa anche saper spiegare*.</li>
+              </ul>
+            </aside>
+          </section>
+
+        </section>
+
+        <!-- <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3"> -->
+        <section>
+
+          <section data-background-image="images/einstein.jpg" data-background-opacity="0.5">
+            <quote cite="Albert Einstein - settembre 1926">
+              <h3 class="big, fragment"><em>"Sono del tutto convinto che Lui non stia affatto giocando a dadi"</em>
+              </h3>
+              <p class="fragment" style="align:left">&mdash; Albert Einstein - settembre 1926</p>
+            </blockquote>
+          </section>
+
+          <section data-background-image="images/niels-bohr.png" data-background-opacity="0.5">
+            <quote cite="Albert Einstein - settembre 1926">
+              <h3 class="big, fragment"><em>"Sono del tutto convinto che Lui non stia affatto giocando a dadi"</em>
+              </h3>
+              <p class="fragment" style="align:left">&mdash; Niels Bohr - settembre 1926</p>
+            </quote>
+          </section>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">atto primo</h1>
+
+        </section>
+
+        <section data-background-image="/images/sun.jpg" data-background-opacity="0.4">
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="fragment r-fit-text">Il Sole esiste grazie alla</h1>
+            <h2 class="fragment">Meccanica Quantistica</h2>
+            <h3 class="fragment">non basterebbe la fisica classica</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Introduco l’idea: il Sole non “dovrebbe” brillare secondo la fisica classica.</li>
+                <li>Le temperature del nucleo solare non sono abbastanza alte per far superare alle particelle la barriera coulombiana.</li>
+                <li>Senza meccanica quantistica → niente fusione → niente luce → niente vita.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Il problema della fisica classica</h2>
+            <h3 class="fragment r-fit-text">I protoni si respingono troppo</h3>
+            <h4 class="fragment">Temperatura del Sole: ~15 milioni °C</h4>
+            <h4 class="fragment">Energia richiesta per fondere i nuclei: molto più alta</h4>
+
+            <aside class="notes">
+              <ul>
+                <li>Richiamo la repulsione coulombiana tra due protoni.</li>
+                <li>A 15 milioni di gradi, i protoni hanno energia cinetica elevata ma NON sufficiente.</li>
+                <li>Secondo la fisica classica, la fusione solare sarebbe praticamente impossibile.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">La soluzione quantistica</h2>
+            <h1 class="fragment r-fit-text">Effetto Tunnel</h1>
+            <h3 class="fragment">I protoni possono “bucare” la barriera di Coulomb</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Descrivo l’idea: i protoni non devono “superare” la barriera con energia sufficiente.</li>
+                <li>Possono attraversarla grazie alla probabilità non nulla prevista dalla meccanica quantistica.</li>
+                <li>Anche se la probabilità è minuscola, nel Sole ci sono 10⁵⁶ protoni → fusione garantita.</li>
+                <li>Questo è uno dei casi più importanti in cui il mondo quantistico determina fenomeni macroscopici.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">La probabilità di fusione</h2>
+            <h3 class="fragment r-fit-text">dipende dall’“esponenziale di Gamow”</h3>
+            <h4 class="fragment">La meccanica quantistica determina i ritmi delle stelle</h4>
+
+            <aside class="notes">
+              <ul>
+                <li>Spiego senza formule: la probabilità di tunneling diminuisce esponenzialmente con l’altezza e lo spessore della barriera.</li>
+                <li>George Gamow (1928) applicò la MQ ai nuclei nel Sole e mostrò come si può prevedere il ritmo delle reazioni.</li>
+                <li>Senza questa probabilità, il Sole sarebbe freddo e morto.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+
+            <h2 class="fragment">L'esponenziale di Gamow</h2>
+
+            <h3 class="fragment">
+              La probabilità di attraversare la barriera di Coulomb è:
+            </h3>
+
+<p class="fragment" style="font-size:0.90em;">
+  $$P \propto \exp\!\left(-\frac{2\pi Z_1 Z_2 e^2}{\hbar v}\right)$$
+</p>
+
+            <h5 class="fragment">dove la probabilità dipende in modo esponenziale dall’energia relativa</h5>
+
+            <aside class="notes">
+              <ul>
+                <li>Questa è la formula chiave introdotta da George Gamow nel 1928.</li>
+                <li>\( Z_1 \) e \( Z_2 \) = numeri atomici dei due nuclei (per i protoni: 1 e 1).</li>
+                <li>\( v \) = velocità relativa delle particelle, proporzionale alla radice dell’energia termica.</li>
+                <li>Il punto fondamentale: **la probabilità cala esponenzialmente quando l’energia è bassa**, ma non è mai zero → il Sole funziona.</li>
+              </ul>
+            </aside>
+
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+
+            <h2 class="fragment">La probabilità di tunneling (WKB)</h2>
+
+            <h3 class="fragment">Approssimazione semiclassica:</h3>
+
+<p class="fragment" style="font-size:0.90em;">
+              $$ T \approx \exp\!\left( -\frac{2}{\hbar} \int_{x_1}^{x_2} \sqrt{2m\,[V(x)-E]}\, dx \right) $$
+            </p>
+
+            <h3 class="fragment r-fit-text">Nel Sole, questa probabilità è piccola ma non nulla</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Questa è la formula generale della probabilità di tunneling per una barriera qualunque.</li>
+                <li>\( V(x) \) = potenziale della barriera (nel Sole: barriera coulombiana).</li>
+                <li>\( E \) = energia cinetica relativa dei nuclei.</li>
+                <li>\( x_1, x_2 \) = punti classici proibiti dove \( E < V(x) \).</li>
+                <li>La chiave: **l’esponente è enorme**, ma non infinito → qualche nucleo riesce a passare.</li>
+                <li>Questa è la base matematica che rende possibile la fusione solare.</li>
+              </ul>
+            </aside>
+
+          </section>
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+
+            <h2 class="fragment">Perché il Sole brilla?</h2>
+
+            <h3 class="fragment">La curva di Gamow determina il ritmo della fusione</h3>
+
+            <h1 class="fragment r-fit-text">
+              $$ P(E) = \text{Max}\left[ \exp(-E/kT) \cdot \exp\!\left(-\frac{b}{\sqrt{E}}\right) \right] $$
+            </h1>
+
+            <h4 class="fragment">Una competizione tra il termine termico e il termine di tunneling</h4>
+
+            <aside class="notes">
+              $\exp(-E/kT)$: più l’energia è alta, meno nuclei ci sono (distribuzione Maxwell-Boltzmann).
+              \( \exp(-b/\sqrt{E}) \): più l’energia è bassa, più è difficile attraversare la barriera di Coulomb.
+              La loro competizione crea un massimo → **il picco di Gamow**.
+              È questa finestra di energie a rendere possibile la fusione nel Sole.
+              <ul>
+                <li>$\exp(-E/kT)$: più l’energia è alta, meno nuclei ci sono (distribuzione Maxwell-Boltzmann).</li>
+                <li>\( \exp(-b/\sqrt{E}) \): più l’energia è bassa, più è difficile attraversare la barriera di Coulomb.</li>
+                <li>La loro competizione crea un massimo → **il picco di Gamow**.</li>
+                <li>È questa finestra di energie a rendere possibile la fusione nel Sole.</li>
+              </ul>
+            </aside>
+
+          </section>
+
+
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="fragment r-fit-text">In conclusione</h1>
+            <h2 class="fragment">Le stelle brillano grazie alla fisica quantistica</h2>
+            <h3 class="fragment">la vita esiste perché le particelle possono attraversare una barriera</h3>
+
+            <aside class="notes">
+              <ul>
+                <li>Rendo esplicita l’idea filosofico-scientifica: l’universo visibile dipende da un fenomeno quantistico.</li>
+                <li>Il Sole è un esempio perfetto di come il microscopico governi il macroscopico.</li>
+                <li>Chiudo collegando alla scoperta premiata dal Nobel 2026 sull’effetto tunnel.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Il mondo non è come sembra</h2>
+          </section>
+
+          <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h2 class="fragment">Il mondo non è come sembra</h2>
+          </section>
+        </section>
+
+        <section data-background-video="images/map.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big, fragment">obiettivo</h1>
+          <ul>
+            <li class="fragment">
+              Dimostrare che anche le cose complesse modo semplice e intuitivo.
+            </li>
+            <li class="fragment">
+              Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+            </li>
+          </ul>
+        </section>
+
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">atto secondo</h1>
+
+        </section>
+        <section data-background-image="images/entang.jpg" data-background-opacity="0.5">
+          <h1 class="r-fit-text">Entanglement</h1>
+          <h1 class="r-fit-text">Quantistico</h1>
+          <h2 class="fragment">è un punto di vista</h2>
+        </section>
+        <section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">La rivoluzione</h1>
+            <h2 class="fragment">è un punto di vista</h2>
+          </section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">metodo</h1>
+            <h2 class="fragment">di nuovo studente</h2>
+            <ul>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">atto secondo</h1>
+
+        </section>
+
+        <section data-background-image="images/einstein.jpg" data-background-opacity="0.5">
+
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="r-fit-text">La crisi della</h1>
+            <h1 class="r-fit-text">Fisica Classica</h1>
+            <h2 class="fragment">è un punto di vista</h2>
+          </section>
+
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="r-fit-text">Tre fenomeni mettono</h1>
+            <h1 class="r-fit-text">in crisi la fisica dell’epoca.</h1>
+            <h3><ol>
+              <li class="fragment">Radiazione del corpo nero</li>
+              <li class="fragment">Effetto fotoelettrico</li>
+              <li class="fragment">Stabilità dell'atomo</li>
+            </ol></h3>
+          </section>
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="r-fit-text">Radiazione del corpo nero</h1>
+            <ul>
+              <li class="fragment">La fisica classica prevedeva energia infinita alle alte frequenze, un risultato assurdo noto come catastrofe ultravioletta. </li>
+              <li class="fragment">Planck risolse il problema introducendo l’idea che l’energia fosse emessa in pacchetti discreti, i quanti, dando origine alla fisica quantistica.</li>
+            </ul>
+          </section>
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="r-fit-text">Effetto fotoelettrico</h1>
+            <ul>
+              <li class="fragment">La luce può espellere elettroni da un metallo, ma solo se possiede una frequenza minima. Aumentare l’intensità non basta: serve luce più energetica.</li>
+              <li class="fragment">Einstein spiegò il fenomeno introducendo i fotoni, quanti di luce</li>
+            </ul>
+          </section>
+          <section data-background-video="images/atom1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="r-fit-text">Stabilità dell'atomo</h1>
+            <ul>
+              <li class="fragment">Secondo la fisica classica l’elettrone, orbitando attorno al nucleo, dovrebbe perdere energia e precipitare, cosa che non accade. La teoria quantistica introduce livelli energetici discreti che mantengono stabile l’atomo.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">La rivoluzione</h1>
+            <h2 class="fragment">è un punto di vista</h2>
+          </section>
+          <section data-background-video="images/eye.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">metodo</h1>
+            <h2 class="fragment">di nuovo studente</h2>
+            <ul>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+              <li class="fragment">
+                Dimostrare che anche le cose complesse possono essere spiegate in modo semplice e intuitivo.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">atto terzo</h1>
+
+        </section>
+        <section data-background-image="images/schr.jpg" data-background-opacity="0.7">
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+
+            <h1 class="fragment">La funzione d’onda</h1>
+            <h3 class="fragment r-fit-text">la descrizione quantistica di una particella</h3>
+
+            <h4 class="fragment">non dice *dove* è una particella</h4>
+            <h4 class="fragment">ma che cosa può accadere</h4>
+
+            <aside class="notes">
+              <ul>
+                <li>Introduco l’idea che, nel mondo quantistico, non possiamo parlare di traiettorie definite.</li>
+                <li>La funzione d’onda è l’oggetto matematico che contiene tutta l’informazione sul sistema.</li>
+                <li>Non va interpretata come un'onda fisica nello spazio, ma come un’onda di probabilità.</li>
+                <li>È il cuore della meccanica quantistica: tutto nasce da qui.</li>
+              </ul>
+            </aside>
+
+          </section>
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+
+            <h2 class="fragment">La funzione d’onda non è osservabile</h2>
+            <h3 class="fragment">Ma il suo modulo quadro sì:</h3>
+
+            <h2 class="fragment">
+              $$ P(x) = |\psi(x)|^2 $$
+            </h2>
+
+            <h4 class="fragment">La probabilità di trovare la particella in un certo punto</h4>
+
+            <aside class="notes">
+              <ul>
+                <li>Spiego la rivoluzione concettuale: la meccanica quantistica non dà certezze, dà probabilità.</li>
+                <li>\(|\psi(x)|^2\) è una densità di probabilità, non una probabilità totale.</li>
+                <li>La normalizzazione garantisce che la particella “esista” da qualche parte.</li>
+                <li>Sottolineo il passaggio: la funzione d’onda è complessa, ma le probabilità sono reali.</li>
+              </ul>
+            </aside>
+
+          </section>
+          <section data-background-video="images/back1.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+
+            <h1 class="fragment" style="font-size: 4.5rem;">
+              $$ i \hbar \frac{\partial \psi}{\partial t} =
+              -\frac{\hbar^2}{2m} \nabla^2 \psi + V \psi $$
+            </h1>
+
+            <aside class="notes">
+              <ul>
+                <li>Questa è l’equazione che governa l’evoluzione di ogni funzione d’onda.</li>
+                <li>È l’analogo quantistico della seconda legge di Newton: dice come cambiano i sistemi nel tempo.</li>
+                <li>Spiego in modo semplice ogni termine: energia cinetica, potenziale, derivata temporale.</li>
+                <li>È un’equazione lineare: qui nasce la sovrapposizione degli stati.</li>
+              </ul>
+            </aside>
+
+          </section>
+
+        </section>
+        <section data-background-image="images/faggin.jpg" data-background-opacity="0.7">
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2>Federico Faggin &amp; <br> la Fisica Quantistica</h1>
+              <h4 class="fragment">Il ponte tra teoria e tecnologia</h4>
+
+              <ul>
+                <li class="fragment">Inventore del Silicon Gate</li>
+                <li class="fragment">Padre del primo microprocessore</li>
+                <li class="fragment">Tecnologia basata sui principi quantistici dei semiconduttori</li>
+              </ul>
+
+              <aside class="notes">
+                Federico Faggin non è un fisico quantistico, ma ha trasformato la MQ in tecnologia.
+                Il Silicon Gate ha permesso transistor più piccoli, più veloci e più affidabili.
+                Il microprocessore 4004 ha dato inizio all’era digitale.
+                Punto chiave: senza MQ non esiste elettronica moderna.
+              </aside>
+
+          </section>
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2>La Quantistica nei Transistor</h2>
+
+            <ul>
+              <li class="fragment">Bande di valenza e conduzione</li>
+              <li class="fragment">Drogaggio del silicio</li>
+              <li class="fragment">Effetto tunnel</li>
+              <li class="fragment">Probabilità degli stati elettronici</li>
+            </ul>
+
+
+            <aside class="notes">
+              Qui puoi ricordare che il comportamento del silicio non è classico:
+              si basa su stati quantizzati degli elettroni.
+              Il drogaggio modifica la probabilità che gli elettroni attraversino una giunzione.
+              L’effetto tunnel diventa importante nei transistor nanometrici.
+              Conclusione: la MQ non è “astratta”, è negli oggetti che usiamo ogni giorno.
+            </aside>
+
+          </section>
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2 class="fragment">Meccanica Quantistica </h2>
+            <h2 class="fragment">miniaturizzazione </h2>
+            <h2 class="fragment">rivoluzione digitale</h2>
+          </section>
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2>Faggin e la Coscienza</h2>
+
+            <ul>
+              <li class="fragment">La coscienza non è solo materia</li>
+              <li class="fragment">L'informazione è fondamentale</li>
+              <li class="fragment">Temi comuni alla MQ: osservatore, collasso, non-località</li>
+            </ul>
+
+            <h4 class="fragment">Tecnologia e interpretazione quantistica</h4>
+
+            <aside class="notes">
+              <ul>
+
+                <li> Faggin, dopo la carriera industriale, si è dedicato allo studio della coscienza.</li>
+                <li> Non è unin,  approccio tecnico alla MQ, ma filosofico:</li>
+                <ul>
+                  <li>  pone domin, ande simili a quelle delle interpretazioni quantistiche.</li>
+                  <li> Nota: noin, n sostiene che la coscienza sia “quantistica”, ma che l’esperienza soggettiva non è spiegata dalla fisica classica.</li>
+                  <li> Ottimo pin, unto per coinvolgere il pubblico.
+                </ul>
+              </ul>
+            </aside>
+
+          </section>
+
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2>Perché Faggin è importante<br>per la Fisica Quantistica?</h2>
+
+            <ul>
+              <li class="fragment">Ha trasformato la MQ in tecnologia quotidiana</li>
+              <li class="fragment">Ha reso possibile la miniaturizzazione dei transistor</li>
+              <li class="fragment">Ha aperto nuovi dialoghi su coscienza e informazione</li>
+              <li class="fragment">Il mondo digitale nasce da idee quantistiche</li>
+            </ul>
+
+            <aside class="notes">
+            <ul>
+              <li>Ribadisci la connessione tecnologia ↔ quantistica</li>
+              <li>Il lavoro di Faggin è uno dei punti di contatto più concreti con la MQ</li>
+              <li>I computer esistono grazie a principi quantistici dei semiconduttori</li>
+              <li>La sua riflessione sulla coscienza apre un ponte verso temi filosofici della MQ</li>
+              <li>Questa slide chiude la sezione e prepara il pubblico alla parte successiva</li>
+            </ul>
+          </aside>
+
+          </section>
+        </section>
+
+
+        <section data-background-image="images/tunneling.jpg" data-background-opacity="0.5">
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h1 class="big">Effetto Tunnel</h1>
+
+            <ul>
+              <li class="fragment">Una particella può attraversare una barriera</li>
+              <li class="fragment">…anche se non ha l’energia per superarla</li>
+              <li class="fragment">Fenomeno possibile solo nella meccanica quantistica</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Introduci l’idea: nel mondo classico una barriera invalicabile rimane tale</li>
+                <li>Nella MQ le particelle non hanno posizioni definite, ma probabilità</li>
+                <li>Una parte della loro “onda di probabilità” può trovarsi oltre la barriera</li>
+                <li>Da qui nasce l’effetto: non è magia, è probabilità quantistica</li>
+                <li>Menziona che questo fenomeno è fondamentale in tecnologia e astrofisica</li>
+              </ul>
+            </aside>
+
+          </section>
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2>Perché l’effetto tunnel è cruciale?</h2>
+
+            <ul>
+              <li class="fragment">Permette reazioni impossibili per la fisica classica</li>
+              <li class="fragment">Fa funzionare i transistor moderni</li>
+              <li class="fragment">È la chiave della fusione nelle stelle</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Ricorda al pubblico che l’effetto tunnel è alla base dell’elettronica moderna</li>
+                <li>Nei transistor nanometrici gli elettroni “tunnelizzano” regolarmente</li>
+                <li>Ma il punto più sorprendente è la fisica stellare</li>
+                <li>Se il Sole seguisse solo la fisica classica, non potrebbe brillare</li>
+                <li>L’effetto tunnel rende possibile la fusione a temperature più basse del previsto</li>
+              </ul>
+            </aside>
+
+          </section>
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+
+            <h2>Il Sole brilla grazie all’Effetto Tunnel</h2>
+
+            <ul>
+              <li class="fragment">I protoni devono avvicinarsi moltissimo</li>
+              <li class="fragment">Ma la repulsione elettrica lo impedisce</li>
+              <li class="fragment">Classicamente: fusione impossibile</li>
+              <li class="fragment">Quantisticamente: tunnel → fusione → luce</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Sottolinea che i protoni si respingono fortissimo per la carica positiva</li>
+                <li>A temperature “normali” stellari non avrebbero energia sufficiente</li>
+                <li>L’onda di probabilità quantistica permette a un protone di “apparire” oltre la barriera</li>
+                <li>Questo rende possibile la fusione nucleare nell’universo</li>
+                <li>Chiudi con: “Il Sole brilla per un fenomeno quantistico: senza MQ l’universo sarebbe buio”</li>
+              </ul>
+            </aside>
+
+          </section>
+        </section>
+
+        <!-- <section> -->
+        <!--   <h2>Decoerenza quantistica</h2> -->
+        <!--   <button onclick="document.getElementById('audio1').play()"> -->
+        <!--     Riproduci effetto -->
+        <!--   </button> -->
+        <!---->
+        <!--   <audio id="audio1"> -->
+        <!--             <source src="images/aud_01.wav" type="audio/wav"> -->
+        <!--   </audio> -->
+        <!-- </section> -->
+
+        <section data-background-image="images/einstein.jpg" data-background-opacity="0.3">
+          <section data-background-video="images/neon.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">titolo</h1>
+            <div style="
+              display: flex;
+              gap: 3rem;
+              align-items: flex-start;
+              justify-content: left;
+              ">
+
+              <!-- COLONNA SINISTRA -->
+              <div class="fragment" style="flex: 1;">
+                <h2>Colonna 1</h2>
+                <ul>
+                  <li>Punto 1</li>
+                  <li>Punto 2</li>
+                  <li>Punto 3</li>
+                </ul>
+              </div>
+
+              <!-- COLONNA DESTRA -->
+              <div class="fragment" style="flex: 1;">
+                <h2>Colonna 2</h2>
+                <p>
+                  Qui la colonna destra, con contenuti diversi.<br>
+                  Ideale per confronti, immagini, grafici, ecc.
+                </p>
+                <!-- <img src="images/placeholder.jpg" style="width: 80%; border-radius: 8px;"> -->
+              </div>
+
+            </div>
+          </section>
+
+        </section>
+
+        <section data-background-image="images/math.gif" data-background-opacity="0.6">
+          <h1 class="big">domande?</h1>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">preludio</h1>
+        </section>
+        <section>  <!-- solo contenitore verticale -->
+
+          <!-- SLIDE 1 -->
+          <section data-background-video="images/map.mp4" data-background-video-loop data-background-video-muted data-background-opacity="0.4">
+            <h1 class="r-fit-text">Quanti sono i</h1>
+            <h1 class="big">QUANTI?</h1>
+          </section>
+
+          <!-- SLIDE 2 -->
+          <section
+            data-background-video="images/map.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+            <h2>Perché la MQ è “strana”?</h2>
+            <p>Una breve storia del perché la fisica classica non bastava più...</p>
+          </section>
+
+          <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">atto terzo</h1>
+          </section>
+          <!-- SLIDE 3 -->
+          <section
+            data-background-video="images/map.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+            <h2>Crisi della fisica classica</h2>
+            <ul>
+              <li>Corpo nero</li>
+              <li>Effetto fotoelettrico</li>
+              <li>Spettri atomici</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">atto terzo</h1>
+        </section>
+
+        <section data-background-video="images/net_bkg.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h2>Obiettivi del progetto</h2>
+          <ul>
+            <li>Applicare la matematica a contesti reali</li>
+            <li>Stimolare il pensiero critico e creativo</li>
+            <li>Collaborare e comunicare in modo efficace</li>
+            <li>Utilizzare strumenti digitali e coding</li>
+          </ul>
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+          <h1 class="big">atto quarto</h1>
+
+        </section>
+
+        <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+          <h1 class="big">atto finale</h1>
+        </section>
+        <section>
+          <section data-background-video="images/neon.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+            <h1 class="big">outro</h1>
+
+          </section>
+          <section data-background-video="images/wave.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+            <h1 class="big">La crisi della fisica classica</h1>
+          </section>
+
+          <section data-background-video="images/wave.mp4" data-background-video-loop  data-background-video-muted data-background-opacity="0.3">
+
+            <h1 class="big">La crisi della fisica classica</h1>
+          </section>
+        </section>
+        <!-- Domande finali o brainstorming -->
+        <section data-background-image="images/math.gif" data-background-opacity="0.6">
+          <h1 class="big">domande?</h1>
+        </section>
+
+        <section data-background-image="images/hinton7.jpg" data-background-opacity="0.8">
+          <section data-background-video="images/net_bkg.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.3">
+            <h2 class="r-fit-text">Geoffrey Hinton - Nobel per la Fisica 2024</h2>
+            <h6>- The Godfather of AI -</h6>
+
+            <!-- Finestra con testo che scorre -->
+            <div class="credits fragment">
+              <div class="credits__inner">
+                <h4>
+                  Discorso alla cerimonia di premiazione del Premio Nobel per la Fisica 2024, professor Geoffrey Hinton.
+                </h4>
+                <br>
+                <p>
+                  Quest’anno i Comitati Nobel per la Fisica e per la Chimica hanno
+                  riconosciuto i progressi straordinari compiuti in una nuova forma
+                  di intelligenza artificiale che utilizza reti neurali artificiali
+                  per imparare a risolvere problemi computazionali complessi.
+                </p>
+
+                <p>
+                  Questa nuova forma di intelligenza artificiale eccelle nel modellare
+                  l’intuizione umana più che il ragionamento umano e ci permetterà di
+                  creare assistenti altamente intelligenti e competenti, in grado di
+                  aumentare la produttività in quasi tutti i settori.
+                  Se i benefici di questa maggiore produttività potranno essere
+                  condivisi equamente, si tratterà di un enorme progresso per tutta
+                  l’umanità.
+                </p>
+
+                <p>
+                  Purtroppo, il rapido sviluppo dell’intelligenza artificiale comporta
+                  anche molti rischi a breve termine. Ha già contribuito alla creazione
+                  di camere dell’eco divisive, offrendo alle persone contenuti che
+                  alimentano indignazione e polarizzazione.
+                  È già utilizzata da governi autoritari per la sorveglianza di massa
+                  e da criminali informatici per attacchi di phishing.
+                </p>
+
+                <p>
+                  In un futuro prossimo, l’intelligenza artificiale potrebbe essere
+                  impiegata per creare nuovi virus devastanti e armi letali
+                  spaventose, capaci di decidere autonomamente chi uccidere o mutilare.
+                  Tutti questi rischi a breve termine richiedono un’attenzione urgente
+                  e decisa da parte dei governi e delle organizzazioni internazionali.
+                </p>
+
+                <p>
+                  Esiste inoltre una minaccia esistenziale di più lungo periodo,
+                  che emergerà quando creeremo entità digitali più intelligenti di noi.
+                  Non sappiamo se saremo in grado di mantenerne il controllo, ma oggi
+                  abbiamo prove che, se verranno sviluppate da aziende guidate da
+                  profitti a breve termine, la nostra sicurezza non sarà la priorità.
+                </p>
+
+                <p>
+                  Abbiamo urgente bisogno di ricerca su come impedire che queste nuove
+                  entità sviluppino il desiderio di prendere il controllo.
+                  Non si tratta più di fantascienza.
+                  </p>
+
+                <p class="firma">&mdash; Geoffrey Hinton</p>
+              </div>
+            </div>
+
+            <p style="font-size:0.55em; opacity:.7; margin-top:0.8em;">
+              fonte YouTube: <a href="https://www.youtube.com/watch?v=-f5WQAk3dYo" target="_blank">Banquet speech — Geoffrey Hinton (estratto)</a>
+            </p>
+          </section>
+
+          <style>
+          .credits{
+          height: 420px;              /* altezza “finestra” */
+          overflow: hidden;           /* nasconde ciò che esce */
+          padding: 16px 20px;
+          border: 1px solid rgba(255,255,255,.25);
+          border-radius: 6px;
+          background: rgba(0,0,0,.25);
+          }
+
+          .credits__inner{
+          font-size: 0.86em;
+          line-height: 1.5;
+          font-family: "Times New Roman", Times, serif;
+          letter-spacing: 0.01em;
+          white-space: normal;
+          max-width: 70ch;
+          will-change: transform;
+          margin: 0 auto;
+
+          /* durata: aumenta se vuoi più lento */
+          animation: creditsScroll 80s linear infinite;
+          }
+
+          .credits__inner p{
+          hyphens: auto;
+          margin: 0 0 1.2em 0;
+          text-align: justify;
+          text-justify: inter-word;
+          }
+          .credits__inner p.firma{
+          text-align:right;
+          margin-top: 2em;
+          font-style: italic;
+          }
+
+          @keyframes creditsScroll{
+          0%   { transform: translateY(25%); }
+          100% { transform: translateY(-100%); }
+          }
+
+          /* opzionale: pausa quando ci passi sopra col mouse */
+          .credits:hover .credits__inner{
+          animation-play-state: paused;
+          }
+          </style>
+      </div>
+      <!-- </section> -->
+      <!-- </section> -->
+    </div>
+    </div>
+
+    <!-- MathJax configuration -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+    </script>
+
+    <!-- MathJax loader -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      transition: 'convex',
+      autoPlayMedia: true,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+    </script>
+  </body>
+</html>
