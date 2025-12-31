@@ -7,9 +7,9 @@
 **Max Planck**
 **[Nobel 1918]**
 
-\[
+$$
 E = h \nu
-\]
+$$
 
 - Introduzione del quanto di energia.
 - Soluzione al problema della radiazione di corpo nero.
@@ -21,9 +21,9 @@ E = h \nu
 **Lord Rayleigh, James Jeans**
 **[Nessun Nobel — crisi della fisica classica]**
 
-\[
+$$
 u(\nu, T) = \frac{8\pi \nu^2}{c^3} kT
-\]
+$$
 
 - La legge classica descrive correttamente solo le basse frequenze.
 - Predice energia infinita alle alte frequenze (catastrofe ultravioletta).
@@ -36,9 +36,9 @@ u(\nu, T) = \frac{8\pi \nu^2}{c^3} kT
 **Albert Einstein**
 **[Nobel 1921 — effetto fotoelettrico]**
 
-\[
+$$
 E_{\text{fotone}} = h\nu
-\]
+$$
 
 - Introduzione del fotone.
 - Natura corpuscolare della luce.
@@ -50,9 +50,9 @@ E_{\text{fotone}} = h\nu
 **Niels Bohr**
 **[Nobel 1922]**
 
-\[
+$$
 L = n\hbar
-\]
+$$
 
 - Livelli energetici discreti.
 - Spiegazione dello spettro dell’idrogeno.
@@ -64,10 +64,10 @@ L = n\hbar
 **Arthur Holly Compton**
 **[Nobel 1927]**
 
-\[
+$$
 \Delta \lambda =
 \frac{h}{m_e c}(1 - \cos\theta)
-\]
+$$
 
 - Diffusione dei raggi X su elettroni.
 - Il fotone possiede quantità di moto.
@@ -79,9 +79,9 @@ L = n\hbar
 **Louis de Broglie**
 **[Nobel 1929]**
 
-\[
+$$
 \lambda = \frac{h}{p}
-\]
+$$
 
 - Estensione del dualismo alla materia.
 - Ogni particella ha associata un’onda.
@@ -93,9 +93,9 @@ L = n\hbar
 **Werner Heisenberg**
 **[Nobel 1932]**
 
-\[
+$$
 [x, p] = i\hbar
-\]
+$$
 
 - Abbandono delle traiettorie classiche.
 - Centralità degli osservabili.
@@ -107,10 +107,10 @@ L = n\hbar
 **Erwin Schrödinger**
 **[Nobel 1933]**
 
-\[
+$$
 i\hbar \frac{\partial \psi}{\partial t}
 = \hat{H}\psi
-\]
+$$
 
 - Introduzione della funzione d’onda.
 - Linguaggio continuo per la meccanica quantistica.
@@ -122,9 +122,9 @@ i\hbar \frac{\partial \psi}{\partial t}
 **Werner Heisenberg**
 **[Nobel già assegnato]**
 
-\[
+$$
 \Delta x\,\Delta p \ge \frac{\hbar}{2}
-\]
+$$
 
 - Limite fondamentale alla conoscenza simultanea di osservabili.
 - La probabilità diventa intrinseca.
@@ -146,9 +146,9 @@ i\hbar \frac{\partial \psi}{\partial t}
 **John Bell**
 **[Nobel 2022 — Aspect, Clauser, Zeilinger]**
 
-\[
+$$
 |\langle AB \rangle| \le 2
-\]
+$$
 
 - Distinzione tra teorie locali e non locali.
 - La filosofia diventa esperimento.
@@ -156,14 +156,18 @@ i\hbar \frac{\partial \psi}{\partial t}
 ---
 
 ## 2000–oggi — Informazione e tecnologie quantistiche
-**[Nobel 2022, 2023, 2024]**
 
-\[
+**[Nobel 2022 — Alain Aspect, John F. Clauser, Anton Zeilinger]**
+**[Nobel 2023 — Pierre Agostini, Ferenc Krausz, Anne L’Huillier]**
+**[Nobel 2024 — Moungi G. Bawendi, Louis E. Brus, Alexei I. Ekimov]**
+
+$$
 |\psi\rangle = \alpha |0\rangle + \beta |1\rangle
-\]
+$$
 
 - Qubit e computazione quantistica.
-- Entanglement controllato.
-- Decoerenza e controllo quantistico.
+- Entanglement controllato e informazione quantistica.
+- Dinamica ultrarapida degli elettroni (scale di attosecondi).
+- Materiali quantistici e nanostrutture (quantum dots).
 - La meccanica quantistica diventa ingegneria.
 
