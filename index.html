@@ -57,15 +57,6 @@
     }
     </style>
   </head>
-<script>
-  Reveal.on('ready', () => {
-    document.addEventListener("touchstart", () => {
-      const el = document.documentElement;
-      if (el.requestFullscreen) el.requestFullscreen();
-      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-    }, { once: true });
-  });
-</script>
 
 
   <body>
@@ -410,14 +401,14 @@
             <h1 class="r-fit-text fragment">bisogna sapere che...</h1>
             <h2 class="r-fit-text fragment">in Fisica ci sono due regole che vanno rispettate<br> per potere considerare valida:</h2>
 
-            <ul style="font-size:1.15em; line-height:1.35;">
+            <ol style="font-size:1.15em; line-height:1.35;">
               <li class="fragment">
-                1. dati sperimentali, da esperimenti ripetibili.
+                dati sperimentali, da esperimenti ripetibili.
               </li>
               <li class="fragment">
-                2. equazioni matematiche collegate a ciò che già si conosce e funziona perché ampiamente dimostrato.
+                equazioni matematiche collegate a ciò che già si conosce e funziona perché ampiamente dimostrato.
               </li>
-            </ul>
+            </ol>
           </section>
 
           <section
@@ -862,7 +853,7 @@
             <aside class="notes">
               <ul>
                 <li>
-                  <strong>Idea guida:</strong> la MQ non nasce come esercizio astratto, ma come risposta a un fallimento concreto.
+                  <strong>Idea guida:</strong> la MQ non nasce come esercizio astratto,- anche se rappresenta la teoria della Fisica con il più alto livello di astrazione concettuale -, ma come risposta a un fallimento concreto.
                 </li>
                 <li>
                   La fisica classica funzionava benissimo… fino a un certo punto.
@@ -1513,6 +1504,71 @@
             </aside>
           </section>
 
+          <section
+            data-background-video="images/laser.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.35"
+          >
+  <h2 class="r-fit-text fragment">Perché il laser è invisibile?</h2>
+
+  <ul style="font-size:1.2em; line-height:1.3; margin-top:1.2rem;">
+    <li class="fragment">Un laser emette <strong>fotoni</strong> altamente direzionali.</li>
+    <li class="fragment">Nel vuoto (o nell’aria pulita) <strong>non c’è nulla con cui interagire</strong>.</li>
+    <li class="fragment">Senza interazione, <strong>non c’è luce visibile</strong>.</li>
+  </ul>
+
+  <div class="fragment" style="margin-top:1.2rem; font-size:1.2em;">
+    Il fascio esiste, ma non lo vediamo.
+  </div>
+
+  <aside class="notes">
+    <ul>
+      <li>Mostro il laser acceso: il fascio non si vede.</li>
+      <li>Sottolineo: non è perché è “debole”, ma perché non interagisce.</li>
+      <li>Qui ribadisco: i fotoni non sono palline luminose.</li>
+      <li>Transizione: per vedere la luce serve una perturbazione.</li>
+    </ul>
+  </aside>
+</section>
+
+ <section
+            data-background-video="images/laser.mp4"
+            data-background-video-loop
+            data-background-video-muted
+            data-background-opacity="0.35"
+          >
+  <h2 class="r-fit-text fragment">Quando il laser diventa visibile</h2>
+
+  <ul style="font-size:1.2em; line-height:1.3; margin-top:1.2rem;">
+    <li class="fragment">Spray = <strong>micro-particelle</strong> nell’aria.</li>
+    <li class="fragment">I fotoni vengono <strong>diffusi</strong>.</li>
+    <li class="fragment">Vediamo la luce solo dove avviene l’<strong>interazione</strong>.</li>
+  </ul>
+
+  <div class="fragment" style="margin-top:1.2rem; font-size:1.3em;">
+    Non vediamo i fotoni.<br>
+    Vediamo gli <strong>effetti quantistici</strong>.
+  </div>
+
+  <aside class="notes">
+    <ul>
+      <li>Spruzzo lo spray e il fascio “compare”.</li>
+      <li>Chiarisco: non sto creando fotoni, sto creando interazioni.</li>
+      <li>Questo è scattering: la luce cambia direzione.</li>
+      <li>Collegamento diretto alla misura in meccanica quantistica.</li>
+    </ul>
+  </aside>
+</section>
+            <section
+  data-background-image="images/laser.png"
+  data-background-size="cover"
+  data-background-position="center"
+>
+  <h2 class="r-fit-text fragment">Dentro un laser</h2>
+</section>
+
+</section>
 
           <!-- ===================== -->
           <!-- COMPTON (1923) -->
@@ -3136,6 +3192,16 @@ No theory of reality compatible with quantum theory can require spatially separa
       Reveal.on("ready", e => playForSlide(e.currentSlide));
       Reveal.on("slidechanged", e => playForSlide(e.currentSlide));
     })();
+    </script>
+        <!-- ===== FULLSCREEN MOBILE (QUI) ===== -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("touchstart", () => {
+          const el = document.documentElement;
+          if (el.requestFullscreen) el.requestFullscreen();
+          else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        }, { once: true });
+      });
     </script>
   </body>
 </html>
