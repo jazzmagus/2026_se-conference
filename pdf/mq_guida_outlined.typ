@@ -3,7 +3,7 @@
 #import "boxed-sheet-local.typ": *
 
 // Wrapper comodo: usa i concept-block del boxed-sheet, ma nel tuo documento
-#let docbox(body) = concept-block(body: body)
+#let docbox(body) = body
 
 // ======================================================
 // LAYOUT DOCUMENTO (il tuo, invariato)
@@ -36,12 +36,12 @@
 )
 
 // Tipografia
-#set text(font: "Georgia", size: 9.0pt)
+#set text(font: "Georgia", size: 9.4pt)
 
 // Paragrafi “newspaper”
 #set par(
   justify: true,
-  leading: 0.8em,
+  leading: 0.7em,
   first-line-indent: 0pt,
 )
 
@@ -296,6 +296,48 @@
     - spieghi che Bohr stabilizza l’atomo,
     - ma è una teoria di transizione (concettualmente fragile),
     - perché mette regole quantistiche sopra un’immagine classica (orbita).
+  ])
+
+    #docbox([
+    == Passo concettuale (non cronologico): De Broglie + doppia fenditura + Mach–Zehnder
+
+    Qui fai una scelta narrativa: anticipi un’idea successiva per far capire *perché* la quantistica diventa
+    davvero “strana”. Non è un problema: lo dichiari apertamente (come nelle slide) e poi torni alla timeline.
+
+    === De Broglie (1924): materia come onda
+
+    Se alla luce (onda) associamo un comportamento corpuscolare (fotoni),
+    De Broglie fa il passo opposto: se la luce può essere *anche particella*,
+    allora la materia può essere *anche onda*.
+
+    Formula-ancora (solo per ricordare la proporzione):
+    $ lambda = h / p $
+
+    Il punto non è calcolare: è cambiare linguaggio.
+    Da qui nasce l’idea che “particella” e “onda” non sono due oggetti diversi,
+    ma due modi di descrivere lo stesso fenomeno a seconda dell’esperimento.
+
+    === Doppia fenditura: quando osservare cambia il risultato
+
+    Questa è la slide che fa scattare il “wow” (o il “non può essere”):
+    - se non misuri il cammino, ottieni interferenza (comportamento ondulatorio),
+    - se misuri “da quale fenditura passa”, l’interferenza scompare (comportamento corpuscolare).
+
+    Il messaggio da fissare è:
+    #emph[non è un difetto degli strumenti: è la struttura della teoria.]
+    La misura non “svela” semplicemente una proprietà già lì: *partecipa* al fenomeno.
+
+    === Interferometro di Mach–Zehnder: la doppia fenditura resa controllabile
+
+    Se vuoi chiarire la doppia fenditura senza dover parlare di “onde che passano in due buchi”,
+    Mach–Zehnder è perfetto: hai due cammini ben definiti, separati e poi ricombinati.
+
+    - Il primo beam splitter crea una sovrapposizione di cammini possibili.
+    - I cammini si ricombinano e interferiscono.
+    - Se inserisci informazione “which-path” (anche solo *in principio*), l’interferenza sparisce.
+
+    Qui la frase utile (coerente col tuo tono):
+    “Non è magia: è informazione.”
   ])
 
   #docbox([

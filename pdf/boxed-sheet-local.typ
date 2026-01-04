@@ -81,7 +81,7 @@ Foliage colorscheme
   block(
     stroke: current-color,
     fill: fill-color,
-    radius: 2pt,
+    radius: 1pt,
     inset: 6pt,
     width: width,
     breakable: true, // utile nei layout a colonne

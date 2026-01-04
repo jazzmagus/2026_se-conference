@@ -1808,7 +1808,7 @@ $notesWidthPercent: 25%;
 	left: 100%;
 	padding: 14px 18px 14px 18px;
 	z-index: 1;
-	font-size: 18px;
+	font-size: 12px;
 	line-height: 1.4;
 	border: 1px solid rgba( 0, 0, 0, 0.05 );
 	color: #222;
@@ -1816,7 +1816,7 @@ $notesWidthPercent: 25%;
 	overflow: auto;
 	box-sizing: border-box;
 	text-align: left;
-	font-family: Helvetica, sans-serif;
+font-family: Georgia, "Times New Roman", serif;
 	-webkit-overflow-scrolling: touch;
 
 	.notes-placeholder {
