@@ -1539,6 +1539,63 @@
             </aside>
           </section>
 
+<section data-background-video="images/world_bkg1.mp4"
+         data-background-video-loop
+         data-background-video-muted
+         data-background-opacity="0.6">
+
+  <h2 class="fragment r-fit-text">Effetto fotoelettrico: prima di Einstein</h2>
+
+  <div style="text-align:left; max-width: 980px; margin: 0 auto;">
+
+    <p class="fragment" style="margin: 0.6em 0;">
+      <strong>H. Hertz</strong> <span style="opacity:0.85;">(1886–87)</span>:
+      scoperta accidentale
+    </p>
+
+    <p class="fragment" style="margin: 0.6em 0;">
+      <strong>W. Hallwachs</strong>, <strong>A. Righi</strong>, <strong>J. J. Thomson</strong>
+      <span style="opacity:0.85;">(1888–1897)</span>:
+      conferme sperimentali
+    </p>
+
+    <p class="fragment" style="margin: 0.6em 0;">
+      <strong>P. Lenard</strong> <span style="opacity:0.85;">(1902)</span>:
+      dati incompatibili con Maxwell
+    </p>
+
+    <p class="fragment" style="margin: 0.6em 0;">
+      <strong>A. Einstein</strong> <span style="opacity:0.85;">(1905)</span>:
+      interpretazione quantistica
+    </p>
+
+    <p class="fragment" style="margin: 0.6em 0;">
+      <strong>R. Millikan</strong> <span style="opacity:0.85;">(1914–16)</span>:
+      conferma sperimentale
+    </p>
+
+    <p class="fragment" style="margin-top: 1.2em; opacity:0.9;">
+      <em>Einstein non scopre l’effetto: ne capisce il significato fisico.</em>
+    </p>
+
+  </div>
+
+  <aside class="notes">
+    <ul>
+      <li>Questa slide serve solo a far vedere che <strong>Einstein arriva dopo</strong>: l’effetto è già noto e misurato.</li>
+      <li><strong>Hertz (1886–87)</strong>: lo trova mentre lavora sulle onde elettromagnetiche; nota che l’UV facilita le scintille.</li>
+      <li><strong>Hallwachs / Righi / Thomson</strong>: confermano e raffinano l’osservazione sperimentale (effetto reale, ripetibile).</li>
+      <li><strong>Lenard (1902)</strong>: misure sistematiche → emergono risultati che <strong>non tornano</strong> con l’idea classica di onda che “porta energia” in modo continuo.</li>
+      <li>Messaggio narrativo: <strong>la teoria migliore (Maxwell) qui scricchiola</strong>. Non perché sia sbagliata, ma perché è incompleta.</li>
+      <li><strong>Einstein (1905)</strong>: propone una lettura nuova (quanti di luce) per dare senso ai dati.</li>
+      <li><strong>Millikan (1914–16)</strong>: esperimenti accurati sul potenziale d’arresto → conferma la relazione prevista da Einstein e ricava una stima di <em>h</em>.</li>
+      <li>Chiusura ironica possibile: “Millikan voleva smentirlo… e invece gli ha fatto da ufficio stampa.”</li>
+    </ul>
+  </aside>
+
+</section>
+
+
           <!-- ===================== -->
           <!-- EINSTEIN (1905) -->
           <!-- ===================== -->
@@ -3441,103 +3498,163 @@
       </div>
     </div>
 
-    <!-- MathJax configuration -->
+    <!-- MathJax configuration (deve stare PRIMA del loader) -->
     <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: { fontCache: 'global' }
-    };
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: { fontCache: 'global' }
+      };
     </script>
 
     <!-- MathJax loader -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
+    <!-- Reveal core -->
     <script src="dist/reveal.js"></script>
+
+    <!-- Reveal plugins -->
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/pointer/pointer.js"></script>
+
     <script>
-    Reveal.initialize({
-      hash: true,
-      transition: 'convex',
-      autoPlayMedia: true,
-      plugins: [RevealMarkdown, RevealZoom, RevealHighlight, RevealNotes]
-    });
+      // ===== MathJax re-typeset su cambio slide e fragment =====
+      async function typesetMath() {
+        try {
+          if (window.MathJax?.typesetPromise) {
+            await MathJax.typesetPromise();
+          }
+        } catch (e) {
+          console.warn("MathJax typeset error:", e);
+        }
+      }
 
-    // ===== AUDIO PER SLIDE (robusto + unlock) =====
-    (function () {
-      const audios = new Map();
-      let unlocked = false;
+      // ===== AUDIO PER SLIDE (robusto + unlock) =====
+      function setupSlideAudio() {
+        (function () {
+          const audios = new Map();
+          let unlocked = false;
 
-      function stopAll() {
-        audios.forEach(a => {
-          try { a.pause(); a.currentTime = 0; } catch(e) {}
+          function stopAll() {
+            audios.forEach(a => {
+              try { a.pause(); a.currentTime = 0; } catch (e) {}
+            });
+          }
+
+          function getAudio(slide) {
+            const src = slide?.dataset?.audio;
+            if (!src) return null;
+
+            if (!audios.has(src)) {
+              const a = new Audio(src);
+              a.loop = true;
+              a.preload = "auto";
+              a.addEventListener("error", () => {
+                console.error("ERRORE AUDIO (path/format?):", src, a.error);
+              });
+              audios.set(src, a);
+            }
+            return audios.get(src);
+          }
+
+          function playForSlide(slide) {
+            stopAll();
+
+            const audio = getAudio(slide);
+            if (!audio) return;
+
+            const v = parseFloat(slide.dataset.audioVolume || "0.18");
+            audio.volume = Number.isFinite(v) ? Math.max(0, Math.min(1, v)) : 0.18;
+
+            if (!unlocked) {
+              console.warn("Audio non sbloccato: clicca o premi un tasto una volta.");
+              return;
+            }
+
+            audio.play().catch(err => console.warn("PLAY BLOCCATO:", err));
+          }
+
+          function unlockOnce() {
+            unlocked = true;
+            console.log("Audio unlocked ✅");
+            playForSlide(Reveal.getCurrentSlide());
+            window.removeEventListener("pointerdown", unlockOnce);
+            window.removeEventListener("keydown", unlockOnce);
+          }
+
+          window.addEventListener("pointerdown", unlockOnce, { once: true });
+          window.addEventListener("keydown", unlockOnce, { once: true });
+
+          Reveal.on("ready", e => playForSlide(e.currentSlide));
+          Reveal.on("slidechanged", e => playForSlide(e.currentSlide));
+        })();
+      }
+
+      // ===== FULLSCREEN MOBILE (primo tap) =====
+      function setupMobileFullscreen() {
+        window.addEventListener("DOMContentLoaded", () => {
+          const tryFullscreen = async () => {
+            const el = document.documentElement;
+            try {
+              if (el.requestFullscreen) await el.requestFullscreen();
+              else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+            } catch (e) {
+              console.warn("Fullscreen non disponibile/bloccato:", e);
+            }
+          };
+
+          document.addEventListener("touchstart", tryFullscreen, { once: true, passive: true });
         });
       }
 
-      function getAudio(slide) {
-        const src = slide?.dataset?.audio;
-        if (!src) return null;
-
-        if (!audios.has(src)) {
-          const a = new Audio(src);
-          a.loop = true;
-          a.preload = "auto";
-          a.addEventListener("error", () => {
-            console.error("ERRORE AUDIO (path/format?):", src, a.error);
-          });
-          audios.set(src, a);
-        }
-        return audios.get(src);
-      }
-
-      function playForSlide(slide) {
-        stopAll();
-
-        const audio = getAudio(slide);
-        if (!audio) return;
-
-        const v = parseFloat(slide.dataset.audioVolume || "0.18");
-        audio.volume = Number.isFinite(v) ? Math.max(0, Math.min(1, v)) : 0.18;
-
-        if (!unlocked) {
-          console.warn("Audio non sbloccato: clicca o premi un tasto una volta.");
+      // ===== INIT REVEAL (anti-schermo-bianco) =====
+      function initRevealSafely() {
+        if (!window.Reveal) {
+          console.error("Reveal non trovato (dist/reveal.js non caricato?)");
           return;
         }
 
-        audio.play().catch(err => console.warn("PLAY BLOCCATO:", err));
+        const plugins = [];
+
+        if (window.RevealMarkdown) plugins.push(RevealMarkdown);
+        if (window.RevealZoom) plugins.push(RevealZoom);
+        if (window.RevealHighlight) plugins.push(RevealHighlight);
+        if (window.RevealNotes) plugins.push(RevealNotes);
+
+        // Pointer: se non è definito, NON lo aggiungo (evita crash e schermo bianco)
+        if (window.RevealPointer) plugins.push(RevealPointer);
+
+        Reveal.initialize({
+          hash: true,
+          transition: "convex",
+          autoPlayMedia: true,
+          plugins
+        }).then(() => {
+          // Hook MathJax DOPO init
+          Reveal.on("ready", () => typesetMath());
+          Reveal.on("slidechanged", () => typesetMath());
+          Reveal.on("fragmentshown", () => typesetMath());
+          Reveal.on("fragmenthidden", () => typesetMath());
+
+          // Setup extra
+          setupSlideAudio();
+          setupMobileFullscreen();
+
+          // Primo typeset
+          typesetMath();
+        }).catch(err => {
+          console.error("Reveal.initialize fallito:", err);
+        });
       }
 
-      function unlockOnce() {
-        unlocked = true;
-        console.log("Audio unlocked ✅");
-        playForSlide(Reveal.getCurrentSlide());
-        window.removeEventListener("pointerdown", unlockOnce);
-        window.removeEventListener("keydown", unlockOnce);
-      }
-
-      window.addEventListener("pointerdown", unlockOnce, { once: true });
-      window.addEventListener("keydown", unlockOnce, { once: true });
-
-      Reveal.on("ready", e => playForSlide(e.currentSlide));
-      Reveal.on("slidechanged", e => playForSlide(e.currentSlide));
-    })();
-    </script>
-    <!-- ===== FULLSCREEN MOBILE (QUI) ===== -->
-
-    <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      document.addEventListener("touchstart", () => {
-        const el = document.documentElement;
-        if (el.requestFullscreen) el.requestFullscreen();
-          else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-      }, { once: true });
-    });
+      // Aspetta che TUTTI gli script siano caricati davvero
+      window.addEventListener("load", initRevealSafely);
     </script>
   </body>
-
 </html>
+
