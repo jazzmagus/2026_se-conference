@@ -3498,29 +3498,29 @@
       </div>
     </div>
 
-    <!-- MathJax configuration (deve stare PRIMA del loader) -->
+<!-- MathJax configuration (deve stare PRIMA del loader) -->
     <script>
       window.MathJax = {
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
           displayMath: [['$$', '$$'], ['\\[', '\\]']]
         },
-        svg: { fontCache: 'global' }
+        svg: { fontCache: 'global' },
+        startup: {
+          typeset: false // Evita typeset automatico all'avvio
+        }
       };
     </script>
 
-    <!-- MathJax loader -->
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <!-- MathJax loader - versione specifica -->
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 
-    <!-- Reveal core -->
-    <script src="dist/reveal.js"></script>
-
-    <!-- Reveal plugins -->
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script src="plugin/zoom/zoom.js"></script>
-    <script src="plugin/pointer/pointer.js"></script>
+    <!-- Reveal core e plugins - CDN per portabilità -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/zoom/zoom.js"></script>
 
     <script>
       // ===== MathJax re-typeset su cambio slide e fragment =====
@@ -3530,131 +3530,206 @@
             await MathJax.typesetPromise();
           }
         } catch (e) {
-          console.warn("MathJax typeset error:", e);
+          console.error("Errore MathJax typeset:", e);
         }
       }
 
-      // ===== AUDIO PER SLIDE (robusto + unlock) =====
+      // ===== AUDIO PER SLIDE (con unlock per policy browser) =====
       function setupSlideAudio() {
-        (function () {
-          const audios = new Map();
-          let unlocked = false;
+        const audios = new Map();
+        let unlocked = false;
 
-          function stopAll() {
-            audios.forEach(a => {
-              try { a.pause(); a.currentTime = 0; } catch (e) {}
+        function stopAll() {
+          audios.forEach(audio => {
+            try {
+              audio.pause();
+              audio.currentTime = 0;
+            } catch (e) {
+              console.warn("Errore stop audio:", e);
+            }
+          });
+        }
+
+        function getAudio(slide) {
+          const src = slide?.dataset?.audio;
+          if (!src) return null;
+
+          if (!audios.has(src)) {
+            const audio = new Audio(src);
+            audio.loop = true;
+            audio.preload = "auto";
+            audio.addEventListener("error", (e) => {
+              console.error(`Errore caricamento audio: ${src}`, audio.error);
             });
+            audios.set(src, audio);
+          }
+          return audios.get(src);
+        }
+
+        function playForSlide(slide) {
+          stopAll();
+
+          const audio = getAudio(slide);
+          if (!audio) return;
+
+          const volume = parseFloat(slide.dataset.audioVolume || "0.3");
+          audio.volume = Number.isFinite(volume) ? Math.max(0, Math.min(1, volume)) : 0.3;
+
+          if (!unlocked) {
+            console.info("🔊 Audio richiede interazione utente. Clicca o premi un tasto.");
+            return;
           }
 
-          function getAudio(slide) {
-            const src = slide?.dataset?.audio;
-            if (!src) return null;
+          audio.play().catch(err => {
+            console.warn("Play audio bloccato dal browser:", err.message);
+          });
+        }
 
-            if (!audios.has(src)) {
-              const a = new Audio(src);
-              a.loop = true;
-              a.preload = "auto";
-              a.addEventListener("error", () => {
-                console.error("ERRORE AUDIO (path/format?):", src, a.error);
-              });
-              audios.set(src, a);
-            }
-            return audios.get(src);
-          }
+        function unlockAudio() {
+          if (unlocked) return;
+          unlocked = true;
+          console.log("🔓 Audio sbloccato");
+          playForSlide(Reveal.getCurrentSlide());
+        }
 
-          function playForSlide(slide) {
-            stopAll();
+        // Unlock su prima interazione
+        window.addEventListener("pointerdown", unlockAudio, { once: true });
+        window.addEventListener("keydown", unlockAudio, { once: true });
 
-            const audio = getAudio(slide);
-            if (!audio) return;
-
-            const v = parseFloat(slide.dataset.audioVolume || "0.18");
-            audio.volume = Number.isFinite(v) ? Math.max(0, Math.min(1, v)) : 0.18;
-
-            if (!unlocked) {
-              console.warn("Audio non sbloccato: clicca o premi un tasto una volta.");
-              return;
-            }
-
-            audio.play().catch(err => console.warn("PLAY BLOCCATO:", err));
-          }
-
-          function unlockOnce() {
-            unlocked = true;
-            console.log("Audio unlocked ✅");
-            playForSlide(Reveal.getCurrentSlide());
-            window.removeEventListener("pointerdown", unlockOnce);
-            window.removeEventListener("keydown", unlockOnce);
-          }
-
-          window.addEventListener("pointerdown", unlockOnce, { once: true });
-          window.addEventListener("keydown", unlockOnce, { once: true });
-
-          Reveal.on("ready", e => playForSlide(e.currentSlide));
-          Reveal.on("slidechanged", e => playForSlide(e.currentSlide));
-        })();
+        // Hook eventi Reveal
+        Reveal.on("ready", e => playForSlide(e.currentSlide));
+        Reveal.on("slidechanged", e => playForSlide(e.currentSlide));
       }
 
       // ===== FULLSCREEN MOBILE (primo tap) =====
       function setupMobileFullscreen() {
-        window.addEventListener("DOMContentLoaded", () => {
-          const tryFullscreen = async () => {
-            const el = document.documentElement;
-            try {
-              if (el.requestFullscreen) await el.requestFullscreen();
-              else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-            } catch (e) {
-              console.warn("Fullscreen non disponibile/bloccato:", e);
+        const tryFullscreen = async () => {
+          const el = document.documentElement;
+          try {
+            if (el.requestFullscreen) {
+              await el.requestFullscreen();
+            } else if (el.webkitRequestFullscreen) {
+              await el.webkitRequestFullscreen();
             }
-          };
+            console.log("📱 Fullscreen attivato");
+          } catch (e) {
+            console.info("Fullscreen non disponibile:", e.message);
+          }
+        };
 
-          document.addEventListener("touchstart", tryFullscreen, { once: true, passive: true });
-        });
+        document.addEventListener("touchstart", tryFullscreen, { once: true, passive: true });
       }
 
-      // ===== INIT REVEAL (anti-schermo-bianco) =====
-      function initRevealSafely() {
+      // ===== LASER POINTER (toggle con Q) =====
+      function setupLaserPointer() {
+        let active = false;
+        let dot = null;
+
+        function createDot() {
+          if (dot) return dot;
+
+          dot = document.createElement("div");
+          dot.id = "laser-pointer";
+          Object.assign(dot.style, {
+            position: "fixed",
+            width: "14px",
+            height: "14px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,0,0,0.9) 0%, rgba(255,0,0,0.7) 100%)",
+            boxShadow: "0 0 15px rgba(255, 0, 0, 0.9), 0 0 25px rgba(255, 0, 0, 0.6)",
+            transform: "translate(-100px, -100px)",
+            zIndex: "999999",
+            pointerEvents: "none",
+            display: "none",
+            transition: "opacity 0.15s ease"
+          });
+
+          document.body.appendChild(dot);
+          return dot;
+        }
+
+        function updatePosition(ev) {
+          if (!active) return;
+
+          const x = ev.clientX ?? ev.touches?.[0]?.clientX;
+          const y = ev.clientY ?? ev.touches?.[0]?.clientY;
+
+          if (typeof x === "number" && typeof y === "number") {
+            const d = createDot();
+            d.style.transform = `translate(${x - 7}px, ${y - 7}px)`;
+          }
+        }
+
+        function setActive(value) {
+          active = value;
+          const d = createDot();
+          d.style.display = active ? "block" : "none";
+          console.log(active ? "🔴 Laser pointer ON" : "⚫ Laser pointer OFF");
+        }
+
+        // Event listeners
+        window.addEventListener("mousemove", updatePosition);
+        window.addEventListener("touchmove", updatePosition, { passive: true });
+
+        return {
+          toggle: () => setActive(!active),
+          enable: () => setActive(true),
+          disable: () => setActive(false),
+          isActive: () => active
+        };
+      }
+
+      // ===== INIT REVEAL =====
+      function initReveal() {
         if (!window.Reveal) {
-          console.error("Reveal non trovato (dist/reveal.js non caricato?)");
+          console.error("❌ Reveal.js non caricato!");
           return;
         }
 
-        const plugins = [];
-
-        if (window.RevealMarkdown) plugins.push(RevealMarkdown);
-        if (window.RevealZoom) plugins.push(RevealZoom);
-        if (window.RevealHighlight) plugins.push(RevealHighlight);
-        if (window.RevealNotes) plugins.push(RevealNotes);
-
-        // Pointer: se non è definito, NON lo aggiungo (evita crash e schermo bianco)
-        if (window.RevealPointer) plugins.push(RevealPointer);
+        const plugins = [
+          window.RevealMarkdown,
+          window.RevealZoom,
+          window.RevealHighlight,
+          window.RevealNotes
+        ].filter(Boolean);
 
         Reveal.initialize({
           hash: true,
           transition: "convex",
           autoPlayMedia: true,
+          controlsTutorial: false,
           plugins
-        }).then(() => {
-          // Hook MathJax DOPO init
-          Reveal.on("ready", () => typesetMath());
-          Reveal.on("slidechanged", () => typesetMath());
-          Reveal.on("fragmentshown", () => typesetMath());
-          Reveal.on("fragmenthidden", () => typesetMath());
+        })
+        .then(() => {
+          console.log("✅ Reveal.js inizializzato");
 
-          // Setup extra
+          // Setup MathJax
+          Reveal.on("ready", typesetMath);
+          Reveal.on("slidechanged", typesetMath);
+          Reveal.on("fragmentshown", typesetMath);
+          Reveal.on("fragmenthidden", typesetMath);
+          typesetMath();
+
+          // Setup funzionalità extra
           setupSlideAudio();
           setupMobileFullscreen();
 
-          // Primo typeset
-          typesetMath();
-        }).catch(err => {
-          console.error("Reveal.initialize fallito:", err);
+          // Setup laser pointer con toggle Q
+          const pointer = setupLaserPointer();
+          document.addEventListener("keydown", (ev) => {
+            if (ev.key?.toLowerCase() === "q") {
+              ev.preventDefault();
+              pointer.toggle();
+            }
+          });
+        })
+        .catch(err => {
+          console.error("❌ Errore inizializzazione Reveal:", err);
         });
       }
 
-      // Aspetta che TUTTI gli script siano caricati davvero
-      window.addEventListener("load", initRevealSafely);
+      // Init quando tutto è caricato
+      window.addEventListener("load", initReveal);
     </script>
   </body>
 </html>
-
