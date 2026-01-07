@@ -87,17 +87,8 @@
 // ======================================================
 
 #docbox([
-  == Contesto
-
-  #quote(block: true)[
-    Questo documento serve come supporto per lo studio e la preparazione della conferenza.
-    È costruito seguendo la struttura delle slide (atti e blocchi tematici) e mantiene un
-    tono discorsivo: l’obiettivo non è essere “sintetici”, ma avere un testo che permetta
-    di ripassare concetti, collegamenti narrativi, passaggi logici e formule essenziali.
-  ]
-
   #keybox(
-    [Regola d’oro (da ricordare durante le prove)],
+    [Regola d’oro ],
     [
       - Non “spiegare tutto”: guida il pubblico da un’idea all’altra.
       - Un concetto per slide, un’immagine per concetto.
